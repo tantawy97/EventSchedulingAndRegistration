@@ -149,6 +149,10 @@ namespace EventSchedulingAndRegistration.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.ComplexProperty<Dictionary<string, object>>("PersonalInformation", "EventSchedulingAndRegistration.Domain.Model.User.PersonalInformation#PersonalInformation", b1 =>
                         {
                             b1.IsRequired();

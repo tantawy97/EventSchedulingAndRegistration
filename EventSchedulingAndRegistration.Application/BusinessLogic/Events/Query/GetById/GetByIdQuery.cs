@@ -4,7 +4,7 @@ using EventSchedulingAndRegistration.Application.Common.DTOs;
 
 namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Query.GetById
 {
-    public record GetEventByIdResult(DefaultGenericResponseDTO<EventDto> @event);
+    public record GetEventByIdResult(DefaultGenericResponseDTO<EventDto> Event);
 
     public record GetByIdQuery(Guid Id) : IQuery<GetEventByIdResult>
     {

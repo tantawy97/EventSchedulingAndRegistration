@@ -1,4 +1,5 @@
 ﻿using EventSchedulingAndRegistration.Application.Data;
+using EventSchedulingAndRegistration.Domain.Abstract;
 using EventSchedulingAndRegistration.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -16,6 +17,13 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        foreach (var entityType in builder.Model.GetEntityTypes())
+        {
+            if (typeof(ISoftDeletedEntity).IsAssignableFrom(entityType.ClrType))
+            {
+                entityType.AddSoftDeleteQueryFilter();
+            }
+        }
         base.OnModelCreating(builder);
     }
 }

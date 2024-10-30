@@ -6,6 +6,6 @@ using MediatR;
 
 namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Query.GetAll
 {
-    public record GetEventsResult(DefaultGenericResponseDTO<List<EventDto>> events);
+    public record GetEventsResult(DefaultGenericResponseDTO<List<EventDto>> Events);
     public record GetAllQuery(PaginationRequest PaginationRequest) : IQuery<GetEventsResult>;
 }

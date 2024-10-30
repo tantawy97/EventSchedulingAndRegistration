@@ -1,8 +1,8 @@
 ﻿using EventSchedulingAndRegistration.Application.Abstract;
-using EventSchedulingAndRegistration.Application.BusinessLogic.Events.Mappers;
 using EventSchedulingAndRegistration.Application.Common;
 using EventSchedulingAndRegistration.Application.Common.CQRS;
 using EventSchedulingAndRegistration.Application.Common.DTOs;
+using EventSchedulingAndRegistration.Application.Common.Mappers;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Query.GetAll

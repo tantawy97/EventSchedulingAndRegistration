@@ -12,6 +12,7 @@ namespace EventSchedulingAndRegistration.Application.Abstract
     {
         IGenericRepository<User> User { get; }
         IGenericRepository<Event> Event { get; }
+        IGenericRepository<EventRegistration> EventRegistration { get; }
         Task<int> SaveChangesAsync();
 
 

@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace EventSchedulingAndRegistration.Application.Common.DTOs
 {
-    public class PersonalInformationDto
-    {
-    }
+    public record PersonalInformationDto(string PhoneNumber, string Address);
 }

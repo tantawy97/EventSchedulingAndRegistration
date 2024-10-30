@@ -12,7 +12,7 @@ namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Comman
     {
         public async Task<DefaultGenericResponseDTO<Unit>> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
-            var location = Location.Of(request.City, request.StreetName);
+            var location = Location.Of(request.Location.City, request.Location.StreetName);
             var @event= Event.Create(request.Title, request.Description, location, request.Date);
 
           await  _unitOfWork.Event.CreateAsync(@event);

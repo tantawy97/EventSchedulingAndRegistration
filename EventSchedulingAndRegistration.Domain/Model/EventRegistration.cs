@@ -14,7 +14,7 @@ namespace EventSchedulingAndRegistration.Domain.Model
         public Guid EventId { get; set; }
         public User User { get; set; } = default!;
         public Event Event { get; set; } = default!;
-        public EventRegistration Create(Guid userId, Guid eventId)
+        public static EventRegistration Create(Guid userId, Guid eventId)
         {
             var eventRegistration = new EventRegistration
             {
@@ -22,6 +22,6 @@ namespace EventSchedulingAndRegistration.Domain.Model
                 EventId = eventId,
             };
             return eventRegistration;
-        }  
+        }
     }
 }

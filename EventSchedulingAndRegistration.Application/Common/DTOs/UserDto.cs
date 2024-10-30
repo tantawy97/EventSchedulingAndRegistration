@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace EventSchedulingAndRegistration.Application.Common.DTOs
 {
-    public class UserDto
-    {
-    }
+    public record UserDto(Guid Id,string Email, string Name,PersonalInformationDto PersonalInformation);
 }

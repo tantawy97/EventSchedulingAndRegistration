@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventSchedulingAndRegistration.Domain.Abstract
 {
-    public abstract class Entity: IEntity
+    public abstract class Entity: IEntity, ISoftDeletedEntity
     {
         public Guid Id { get; set; }
         public DateTime? CreatedAt { get; set; }

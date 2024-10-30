@@ -14,6 +14,7 @@ namespace EventSchedulingAndRegistration.Application.Abstract.Repositories
         Task<long> CountAllAsync();
         Task<TEntity> FindByIdAsync(Guid id, bool asNoTracking = false);
         Task CreateAsync(TEntity entity);
+        void Remove(TEntity entity);
         void Update(TEntity entity);
         Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? filter = null, bool asNoTracking = false); 
 

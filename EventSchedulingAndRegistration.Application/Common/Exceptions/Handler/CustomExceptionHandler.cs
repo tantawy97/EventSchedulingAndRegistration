@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
-using EventSchedulingAndRegistration.Application.Common.Exceptions;
 
 
 namespace EventSchedulingAndRegistration.Application.Common.Exceptions.Handler;
@@ -13,6 +12,7 @@ public class CustomExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext context, Exception exception, CancellationToken cancellationToken)
     {
+        string message = string.Empty;
         logger.LogError(
             "Error Message: {exceptionMessage}, Time of occurrence {time}",
             exception.Message, DateTime.UtcNow);
@@ -67,9 +67,10 @@ public class CustomExceptionHandler
         if (exception is ValidationException validationException)
         {
             problemDetails.Extensions.Add("ValidationErrors", validationException.Errors);
+              message = validationException.Errors.FirstOrDefault()?.ErrorMessage;
         }
 
-        await context.Response.WriteAsJsonAsync(DefaultGenericResponseDTO<ProblemDetails>.ErrorResponse(problemDetails), cancellationToken: cancellationToken);
+        await context.Response.WriteAsJsonAsync(DefaultGenericResponseDTO<ProblemDetails>.ErrorResponse(problemDetails,Message: message?? "Error"), cancellationToken: cancellationToken);
         return true;
     }
 }

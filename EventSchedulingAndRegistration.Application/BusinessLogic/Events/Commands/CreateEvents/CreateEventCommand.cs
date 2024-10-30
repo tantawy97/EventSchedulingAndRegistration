@@ -1,5 +1,7 @@
 ﻿using EventSchedulingAndRegistration.Application.Common;
 using EventSchedulingAndRegistration.Application.Common.CQRS;
+using EventSchedulingAndRegistration.Application.Common.DTOs;
+using EventSchedulingAndRegistration.Domain.ValueObject;
 using MediatR;
 
 namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Commands.CreateEvents
@@ -9,8 +11,6 @@ namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Comman
         public string Title { get; set; } = default!;
         public string Description { get; set; } = default!;
         public DateTime Date { get; set; }
-        public string City { get; set; } = default!;
-        public string StreetName { get; set; } = default!;
-
+        public LocationDto Location { get; set; } = default!;
     }
 }

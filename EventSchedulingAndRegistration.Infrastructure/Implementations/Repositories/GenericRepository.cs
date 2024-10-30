@@ -30,6 +30,9 @@ namespace EventSchedulingAndRegistration.Infrastructure.Implementations.Reposito
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? filter = null, bool asNoTracking = false)
         => filter == null ? await GetBaseQuery(asNoTracking).AnyAsync() : await GetBaseQuery(asNoTracking).AnyAsync(filter);
 
-
+        public void Remove(TEntity entity)
+        {
+            dbSet.Remove(entity);
+        }
     }
 }
