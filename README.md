@@ -31,5 +31,8 @@ Username: postgres
 Password: postgres
 Port: 5433
 
+### Please Note ---
+    if you want to create Admin please use this E-mail:
+        Admin@Admin.com
 
 
