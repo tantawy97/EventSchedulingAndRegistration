@@ -1,8 +1,10 @@
 ﻿using EventSchedulingAndRegistration.Application.BusinessLogic.Account.Login;
 using EventSchedulingAndRegistration.Application.Common;
 using EventSchedulingAndRegistration.Application.Common.Exceptions.Handler;
+using EventSchedulingAndRegistration.Infrastructure.Data;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
@@ -89,7 +91,11 @@ public static class DependencyInjection
 
 
         app.MapControllers();
+        using var scope = app.Services.CreateScope();
 
+        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+        context.Database.MigrateAsync().GetAwaiter().GetResult();
         app.Run();
         return app;
     }

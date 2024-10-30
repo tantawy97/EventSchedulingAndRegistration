@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  eventschedulingandregistrationdb:
+     image: postgres
+
+  eventschedulingandregistration.api:
+    image: ${DOCKER_REGISTRY-}eventschedulingandregistrationapi
+    build:
+      context: .
+      dockerfile: EventSchedulingAndRegistration.API/Dockerfile
+
+volumes:
+  postgres_event: 
+
