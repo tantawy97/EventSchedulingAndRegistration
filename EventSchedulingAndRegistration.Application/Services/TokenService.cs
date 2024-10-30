@@ -38,7 +38,7 @@ namespace EventSchedulingAndRegistration.Application.Services
         public string CreateJwtToken(User user)
         {
             var roleClaims = new List<Claim>();
-            roleClaims.Add(new Claim("roles",user.Name =="Admin" ? "Admin": "User"));
+            roleClaims.Add(new Claim("roles",user.Email== "Admin@Admin.com" ? "Admin": "User"));
 
             var claims = new[]
            {
