@@ -20,11 +20,12 @@ Make sure you have the following installed on your machine:
 
 2. Open your browser and navigate to:
     Application: https://localhost:7081/
+
     Swagger Documentation: https://localhost:7081/swagger/index.html
 
-    docker pull tantawy9701/evenschedulingandregistration:tagname
+3. docker pull tantawy9701/evenschedulingandregistration:latest
 
-3. Database Connection
+4. Database Connection
 The application connects to a PostgreSQL database. Use the following credentials:
 Server: localhost
 Username: postgres
