@@ -23,7 +23,7 @@ Make sure you have the following installed on your machine:
 
     Swagger Documentation: https://localhost:7081/swagger/index.html
 
-3. docker pull tantawy9701/evenschedulingandregistration:latest
+3. To pull the image: docker pull tantawy9701/evenschedulingandregistration:latest
 
 4. Database Connection
 The application connects to a PostgreSQL database. Use the following credentials:
