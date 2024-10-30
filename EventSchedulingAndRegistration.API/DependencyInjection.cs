@@ -2,6 +2,7 @@
 using EventSchedulingAndRegistration.Application.Common;
 using EventSchedulingAndRegistration.Application.Common.Exceptions.Handler;
 using EventSchedulingAndRegistration.Infrastructure.Data;
+using EventSchedulingAndRegistration.Infrastructure.Extension;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -86,15 +87,11 @@ public static class DependencyInjection
         }
 
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
 
 
         app.MapControllers();
-        using var scope = app.Services.CreateScope();
-        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        context.Database.MigrateAsync().GetAwaiter().GetResult();
-        app.Run();
+
         return app;
     }
 }

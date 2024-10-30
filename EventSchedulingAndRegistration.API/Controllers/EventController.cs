@@ -35,6 +35,7 @@ namespace EventSchedulingAndRegistration.API.Controllers
             return Ok(result);
         }      
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         [ProducesResponseType(typeof(DefaultGenericResponseDTO<Unit>), 200)]
         public async Task<IActionResult> Create([FromBody] CreateEventCommand request)
         {

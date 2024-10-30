@@ -1,6 +1,7 @@
 ﻿using EventSchedulingAndRegistration.Application.Data;
 using EventSchedulingAndRegistration.Domain.Abstract;
 using EventSchedulingAndRegistration.Domain.Model;
+using EventSchedulingAndRegistration.Infrastructure.Extension;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 

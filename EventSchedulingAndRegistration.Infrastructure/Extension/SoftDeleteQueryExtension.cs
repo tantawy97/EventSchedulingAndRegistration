@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace EventSchedulingAndRegistration.Infrastructure.Data
+namespace EventSchedulingAndRegistration.Infrastructure.Extension
 {
     public static class SoftDeleteQueryExtension
     {

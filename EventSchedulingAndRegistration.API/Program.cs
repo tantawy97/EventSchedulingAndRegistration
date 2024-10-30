@@ -3,6 +3,7 @@ using EventSchedulingAndRegistration.API;
 using EventSchedulingAndRegistration.Application;
 using EventSchedulingAndRegistration.Application.Common.Logger;
 using EventSchedulingAndRegistration.Infrastructure;
+using EventSchedulingAndRegistration.Infrastructure.Extension;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,4 +20,6 @@ builder.Services
 // Add Pipeline
 var app = builder.Build();
 app.UseApiServices();
+await app.InitializeDatabaseAsync();
 
+app.Run();

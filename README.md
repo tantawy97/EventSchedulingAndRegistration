@@ -27,13 +27,14 @@ Make sure you have the following installed on your machine:
 
 4. Database Connection
 The application connects to a PostgreSQL database. Use the following credentials:
-Server: localhost
-Username: postgres
+ Server: localhost
+ Username: postgres
 Password: postgres
 Port: 5433
 
-### Please Note ---
-    if you want to create Admin please use this E-mail:
-        Admin@Admin.com
+### --- Please Note ---
+    if you want to login by Admin please use this E-mail: Admin@Admin.com
+    All Event And EventRegistration endpoints is Authorized 
+    only Admin Can create Event in this post endpoint:https://localhost:7081/api/Event
 
 
