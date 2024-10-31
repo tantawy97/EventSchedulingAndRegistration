@@ -17,7 +17,7 @@ namespace EventSchedulingAndRegistration.Application.BusinessLogic.EventRegistra
            .NotEmpty()
            .NotNull()
            .WithMessage("Event Id Is Required")
-           .Must(u => _unitOfWork.EventRegistration.AnyAsync(w => w.EventId == u.EventId && w.UserId == _tokenService.UserId).Result)
+           .Must(u => !_unitOfWork.EventRegistration.AnyAsync(w => w.EventId == u.EventId && w.UserId == _tokenService.UserId).Result)
            .WithMessage("User Already Registered For Event")
            .WithErrorCode("400");
         }

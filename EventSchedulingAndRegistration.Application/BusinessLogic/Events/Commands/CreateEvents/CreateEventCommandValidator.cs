@@ -14,7 +14,7 @@ namespace EventSchedulingAndRegistration.Application.BusinessLogic.Events.Comman
            .NotEmpty()
            .NotNull()
            .WithMessage("Title Is Required")
-           .Must(u => !_unitOfWork.User.AnyAsync(w => w.Email == u).Result)
+           .Must(u => !_unitOfWork.Event.AnyAsync(w => w.Title == u).Result)
            .WithMessage("Title Is Exist")
            .WithErrorCode("400");
 
