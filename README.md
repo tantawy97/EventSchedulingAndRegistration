@@ -33,7 +33,9 @@ Password: postgres
 Port: 5433
 
 ### --- Please Note ---
-    if you want to login by Admin please use this E-mail: Admin@Admin.com
+    if you want to login by Admin please use this
+    E-mail: Admin@Admin.com
+    Password: 1234
     All Event And EventRegistration endpoints is Authorized 
     only Admin Can create Event in this post endpoint:https://localhost:7081/api/Event
 
